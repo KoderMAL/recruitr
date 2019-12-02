@@ -44,11 +44,11 @@ HR representatives should be able to:
 
 ### Wireframes
 
-![All_Positions](https://raw.githubusercontent.com/KoderMAL/recruitr/master/readme-assets/All_Positions.png)
+![All_Positions](https://github.com/KoderMAL/recruitr/blob/master/readme-instructions/All_Positions.png?raw=true)
 
-![Match](https://raw.githubusercontent.com/KoderMAL/recruitr/master/readme-assets/Match.png)
+![Match](https://github.com/KoderMAL/recruitr/blob/master/readme-instructions/Match.png?raw=true)
 
-![New_Applicant](https://raw.githubusercontent.com/KoderMAL/recruitr/master/readme-assets/New_Applicant.png)
+![New_Applicant](https://github.com/KoderMAL/recruitr/blob/master/readme-instructions/New_Applicant.png?raw=true)
 
 ---
 
