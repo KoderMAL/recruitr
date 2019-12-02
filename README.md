@@ -44,11 +44,11 @@ HR representatives should be able to:
 
 ### Wireframes
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e531e8c-2d0f-4783-b948-6a14546c953e/All_Positions.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e531e8c-2d0f-4783-b948-6a14546c953e/All_Positions.png)
+![All_Positions](https://raw.githubusercontent.com/KoderMAL/recruitr/master/readme-assets/All_Positions.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27cb5d4c-4108-4b32-a21e-96ff0b9b8308/Match.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27cb5d4c-4108-4b32-a21e-96ff0b9b8308/Match.png)
+![Match](https://raw.githubusercontent.com/KoderMAL/recruitr/master/readme-assets/Match.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be20a550-600e-401e-a6a7-7899d2f65fd7/New_Applicant.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be20a550-600e-401e-a6a7-7899d2f65fd7/New_Applicant.png)
+![New_Applicant](https://raw.githubusercontent.com/KoderMAL/recruitr/master/readme-assets/New_Applicant.png)
 
 ---
 
