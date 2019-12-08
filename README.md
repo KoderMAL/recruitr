@@ -1,1 +1,2 @@
 # recruitr
+![image](diagram.png)
