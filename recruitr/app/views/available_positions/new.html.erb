@@ -1,0 +1,15 @@
+
+<%= form_with scope: :available_position, local: true do |form| %>
+    <p>
+      <%= form.label :position_title %><br>
+      <%= form.text_field :position_title %>
+    </p>
+   
+    <p>
+      <%= form.label :skills %><br>
+      <%= form.text_field :skills %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>

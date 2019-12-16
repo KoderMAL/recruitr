@@ -1,0 +1,2 @@
+module AvailablePositionsHelper
+end
