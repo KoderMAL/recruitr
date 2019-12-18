@@ -1,11 +1,18 @@
 <%= form_for @available_position do |f| %>
+  <h3 class='title'>Enter the title of the position</h1>
     <p>
-      <%= f.label :position_title %><br />
-      <%= f.text_field :position_title %>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
     </p>
-    # <%= f.fields_for :skills do |builder| %>
-    #   <%= render "skill_fields", :f => builder %>
-    # <% end %>
+		<h3 class='title'>Add skills </h1>
+		<%= f.nested_fields_for :skills do |s| %>
+				<%= s.text_field :content, class: 'input', placeholder: 'new skill' %>
+				<%= s.remove_nested_fields_link do %>
+		  		<button type='button' class='button is-danger is-centered'>Remove</button>
+        <% end %>
+    <% end %>
+    <%= f.add_nested_fields_link :skills do %>
+      <button type='button' class='button is-info'>New skill</button>
+    <% end %>
     <p><%= f.submit "Submit" %></p>
-  <% end %>
-  <%= f.error_messages %>
+<% end %>

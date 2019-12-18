@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :participants
-  resources :available_positions
+  # resources :participants
+  resources :available_positions do
+    resources :skills
+  end
 
   root 'welcome#index'
 end

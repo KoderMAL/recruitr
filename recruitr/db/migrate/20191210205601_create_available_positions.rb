@@ -3,7 +3,6 @@ class CreateAvailablePositions < ActiveRecord::Migration[6.0]
     create_table :available_positions do |t|
       t.string :title
       t.numeric :number_of_applicants
-
       t.timestamps
     end
   end
