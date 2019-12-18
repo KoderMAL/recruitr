@@ -7,6 +7,10 @@ class AvailablePositionsController < ApplicationController
         2.times { @available_position.skills }
     end
 
+    # def add_skill
+    #   @available_position.skills.push("");
+    # end
+
     def create
         @available_position = Person.new(available_position_params)
     end
