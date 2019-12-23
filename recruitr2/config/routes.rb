@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :participants do
+    resources :available_positions
+  end
   get 'welcome/index'
   resources :available_positions do
     resources :skills

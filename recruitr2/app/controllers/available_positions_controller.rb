@@ -4,7 +4,11 @@ class AvailablePositionsController < ApplicationController
   # GET /available_positions
   # GET /available_positions.json
   def index
-    @available_positions = AvailablePosition.all
+    if params[:participant_id]
+      @available_positions = Participant.find(params[:participant_id]).includes(:participants).available_position
+    else
+      @available_positions = AvailablePosition.all
+    end
   end
 
   # GET /available_positions/1
@@ -72,5 +76,4 @@ class AvailablePositionsController < ApplicationController
     def available_position_params
       params.require(:available_position).permit(:content, :applications_count, :skills_attributes => [:content])
     end
-    private
 end
