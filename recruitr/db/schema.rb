@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_171738) do
+ActiveRecord::Schema.define(version: 2019_12_25_163405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_12_23_171738) do
     t.integer "applications_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "participant_id"
+    t.index ["participant_id"], name: "index_available_positions_on_participant_id"
   end
 
   create_table "participants", force: :cascade do |t|
@@ -43,11 +45,12 @@ ActiveRecord::Schema.define(version: 2019_12_23_171738) do
 
   create_table "skills", force: :cascade do |t|
     t.string "content"
-    t.bigint "available_position_id", null: false
+    t.bigint "available_position_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["available_position_id"], name: "index_skills_on_available_position_id"
   end
 
+  add_foreign_key "available_positions", "participants"
   add_foreign_key "skills", "available_positions"
 end
