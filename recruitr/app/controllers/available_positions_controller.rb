@@ -74,6 +74,6 @@ class AvailablePositionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def available_position_params
-      params.require(:available_position).permit(:content, :applications_count, :skills_attributes => [:content])
+      params.require(:available_position).permit(:content, :applications_count, :skills_attributes => [:id, :content])
     end
 end

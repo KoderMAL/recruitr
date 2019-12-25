@@ -16,7 +16,6 @@ class ParticipantsController < ApplicationController
   def new
     @participant = Participant.new
     @participant.build_available_position
-    @available_positions = AvailablePosition.all
   end
 
   # GET /participants/1/edit
