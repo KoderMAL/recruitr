@@ -32,8 +32,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :available_positions %>
-    <%= form.collection_select :available_position_id, AvailablePosition.all,:id,:content, include_blank: true %>
+    <%= form.label :available_position %>
+    <%= form.fields_for :available_position do |f| %>
+      <%= f.collection_select :content, AvailablePosition.all, :content, :content, include_blank: true %>
+    <% end %>
   </div>
 
   <div class="actions">

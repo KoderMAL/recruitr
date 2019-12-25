@@ -15,7 +15,7 @@ class ParticipantsController < ApplicationController
   # GET /participants/new
   def new
     @participant = Participant.new
-    # @participant.available_position.build
+    @participant.build_available_position
     @available_positions = AvailablePosition.all
   end
 
@@ -71,6 +71,6 @@ class ParticipantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def participant_params
-      params.require(:participant).permit(:first_name, :last_name, :email, :social_media, :available_position_attributes => [:content, :id])
+      params.require(:participant).permit(:first_name, :last_name, :email, :social_media, :available_position_attributes => [:id, :content])
     end
 end

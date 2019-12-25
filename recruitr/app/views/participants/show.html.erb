@@ -20,5 +20,11 @@
   <%= @participant.social_media %>
 </p>
 
+<p>
+  <strong>Applying for</strong>
+  <%= @participant.available_position.content %>
+</p>
+
+
 <%= link_to 'Edit', edit_participant_path(@participant) %> |
 <%= link_to 'Back', participants_path %>

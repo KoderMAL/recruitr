@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :participants do
-    resources :available_positions
+    resource :available_position, except: :show, path_names: { edit: "" }
   end
   get 'welcome/index'
   resources :available_positions do
