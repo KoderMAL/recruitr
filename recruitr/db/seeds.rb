@@ -23,12 +23,6 @@ available_positions = AvailablePosition.create!([{
         content:'community manager',
         skills:[skills.second]}])
 
-Participant.create!({
-    first_name:'Amine',
-    last_name:'Lalaoui',
-    email:'amine@sykxlab.com',
-    social_media:'github.com/KoderMAL', available_position: available_positions.first})
-
 Recruiter.create!([{
     first_name:'Sandjiv',
     last_name:'Parassouramanaick',
@@ -48,5 +42,13 @@ Recruiter.create!([{
     position:'cto',
     seniority_score:35
 }])
+
+Participant.create!({
+    first_name:'Amine',
+    last_name:'Lalaoui',
+    email:'amine@sykxlab.com',
+    social_media:'github.com/KoderMAL', available_position: available_positions.first})
+
+
 
 p "Created #{Skill.count} skill(s) & #{AvailablePosition.count} position(s) & #{Participant.count} participant(s) & #{Recruiter.count} recruiter(s)"

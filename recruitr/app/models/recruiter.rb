@@ -1,4 +1,4 @@
 class Recruiter < ApplicationRecord
-    # has_many :participants
-    
+    has_many :participants, dependent: :nullify
+    accepts_nested_attributes_for :participants
 end

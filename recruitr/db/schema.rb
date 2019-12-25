@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_163405) do
+ActiveRecord::Schema.define(version: 2019_12_25_225501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_163405) do
     t.string "social_media"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "recruiter_id"
+    t.index ["recruiter_id"], name: "index_participants_on_recruiter_id"
   end
 
   create_table "recruiters", force: :cascade do |t|
@@ -41,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_163405) do
     t.integer "seniority_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "participant_id"
+    t.index ["participant_id"], name: "index_recruiters_on_participant_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -52,5 +56,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_163405) do
   end
 
   add_foreign_key "available_positions", "participants"
+  add_foreign_key "participants", "recruiters"
+  add_foreign_key "recruiters", "participants"
   add_foreign_key "skills", "available_positions"
 end
