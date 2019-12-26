@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> Dear <%= @participant.first_name %> </h1>
+
+    <p> <%= @meeting.title %> </p>
+    
+    <p>You have a appointment with <%= @other.first_name %> ! </p>
+
+    <p><%= @meeting.description %> </p>
+
+    <p> The meeting starts at <%= @meeting.starts_on %> to <%= @meeting.ends_on%> </p>
+
+    <p>Have fun</p>
+    
+  </body>
+</html>

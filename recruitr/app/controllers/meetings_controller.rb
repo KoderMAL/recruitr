@@ -14,8 +14,6 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    p 'PARAMETERS'
-    p params
     @meeting = Meeting.new({participant_id:params['participant_id'],recruiter_id:params['recruiter_id']})
   end
 
@@ -30,6 +28,7 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.save
+        send_emails(@meeting)
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
         format.json { render :show, status: :created, location: @meeting }
       else
@@ -44,6 +43,7 @@ class MeetingsController < ApplicationController
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
+        send_emails(@meeting)
         format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
@@ -61,6 +61,11 @@ class MeetingsController < ApplicationController
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def send_emails(meeting)
+    MeetingMailer.meeting_mail(meeting.participant, meeting.recruiter, meeting).deliver
+    MeetingMailer.meeting_mail(meeting.recruiter, meeting.participant, meeting).deliver
   end
 
   private
