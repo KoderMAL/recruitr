@@ -30,8 +30,14 @@
     <%= form.label :ends_on %>
     <%= form.datetime_select :ends_on %>
   </div>
-  <%= form.hidden_field :participant_id, value: params['participant_id'] %>
-  <%= form.hidden_field :recruiter_id, value: params['recruiter_id'] %>
+  
+  <% if params[:participant_id].present? && params[:recruiter_id] %> 
+    <%= form.hidden_field :participant_id, value: params[:participant_id] %>
+    <%= form.hidden_field :recruiter_id, value: params[:recruiter_id] %>
+  <% else %> 
+    <%= form.hidden_field :participant_id %>
+    <%= form.hidden_field :recruiter_id %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

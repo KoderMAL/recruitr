@@ -12,39 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :is_average %>
-    <%= form.check_box :is_average %>
-  </div>
-
-  <div class="field">
     <%= form.label :dynamism %>
-    <%= form.number_field :dynamism %>
+    <%= form.select :dynamism, (0..5) %>
   </div>
 
   <div class="field">
     <%= form.label :interest %>
-    <%= form.number_field :interest %>
+    <%= form.select :interest, (0..5) %>
   </div>
 
   <div class="field">
     <%= form.label :experience %>
-    <%= form.number_field :experience %>
+    <%= form.select :experience, (0..5) %>
   </div>
 
   <div class="field">
     <%= form.label :overall %>
-    <%= form.number_field :overall %>
+    <%= form.select :overall, (0..5) %>
   </div>
 
-  <div class="field">
-    <%= form.label :participant_id %>
-    <%= form.text_field :participant_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :recruiter_id %>
-    <%= form.text_field :recruiter_id %>
-  </div>
+  <%= form.hidden_field :participant_id, value: params['participant_id'] %>
+  <%= form.hidden_field :recruiter_id, value: params['recruiter_id'] %>
 
   <div class="actions">
     <%= form.submit %>

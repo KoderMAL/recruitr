@@ -35,6 +35,11 @@
   <%= link_to 'Edit meeting', edit_meeting_path(@participant.meeting) %>
 </p>
 
-<%= link_to 'Create Meeting', new_meeting_path(@participant.meeting) %> |
+<p>
+  <strong>Average score:</strong>
+  <%= @participant.calculate_average_score %>
+  <%= link_to 'Show participant scores', score_cards_path({participant_id: @participant.id}) %> 
+</p>
+<%= link_to 'Evaluate participant', new_score_card_path({participant_id: @participant.id, recruiter_id: @participant.recruiter.id}) %> |
 <%= link_to 'Edit', edit_participant_path(@participant) %> |
 <%= link_to 'Back', participants_path %>

@@ -4,7 +4,7 @@ class ScoreCardsController < ApplicationController
   # GET /score_cards
   # GET /score_cards.json
   def index
-    @score_cards = ScoreCard.all
+    @score_cards = ScoreCard.where(participant_id: params['participant_id'])
   end
 
   # GET /score_cards/1
@@ -14,7 +14,7 @@ class ScoreCardsController < ApplicationController
 
   # GET /score_cards/new
   def new
-    @score_card = ScoreCard.new
+    @score_card = ScoreCard.new({participant_id: params['participant_id'], recruiter_id: Recruiter.first.id})
   end
 
   # GET /score_cards/1/edit

@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Is average:</strong>
-  <%= @score_card.is_average %>
-</p>
-
-<p>
   <strong>Dynamism:</strong>
   <%= @score_card.dynamism %>
 </p>
@@ -35,5 +30,4 @@
   <%= @score_card.recruiter_id %>
 </p>
 
-<%= link_to 'Edit', edit_score_card_path(@score_card) %> |
 <%= link_to 'Back', score_cards_path %>

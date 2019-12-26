@@ -14,6 +14,7 @@ class Participant < ApplicationRecord
     end
 
     def calculate_average_score
-        @average = self.score_cards.reduce(0) {|sum, x| sum + x[:overall]}.round()
+        @average = self.score_cards.reduce(0) {|sum, x| sum + x[:overall]} / self.score_cards.size 
+        @average.round()
     end
 end
