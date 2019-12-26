@@ -26,9 +26,10 @@
         <td><%= participant.available_position.content %></td>
         <td><%= participant.recruiter.first_name %></td>
         <td><%= participant.meeting.starts_on %></td>
-        <td><%= link_to 'Show', participant %></td>
-        <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
-        <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit meeting', edit_meeting_path(participant.meeting) %></td>
+        <td><%= link_to 'Show participant', participant %></td>
+        <td><%= link_to 'Edit participant', edit_participant_path(participant) %></td>
+        <td><%= link_to 'Destroy participant', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

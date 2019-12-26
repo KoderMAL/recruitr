@@ -14,15 +14,20 @@ Skill.destroy_all
 Meeting.destroy_all
 
 skills = Skill.create!([{
-    content:'ruby'},{
-        content:'management'},{
-            content:'marketing'}])
+    content:'ruby'
+    },{
+    content:'management'
+    },{
+    content:'marketing'
+    }])
 
 available_positions = AvailablePosition.create!([{
     content:'developer', 
-    skills:[skills.first]}, {
-        content:'community manager',
-        skills:[skills.second]}])
+    skills:[skills.first]
+    },{
+    content:'community manager',
+    skills:[skills.second]
+    }])
 
 Recruiter.create!([{
     first_name:'Sandjiv',
@@ -48,8 +53,11 @@ participant = Participant.create!({
     first_name:'Amine',
     last_name:'Lalaoui',
     email:'amine@sykxlab.com',
-    social_media:'github.com/KoderMAL', available_position: available_positions.first})
+    social_media:'github.com/KoderMAL',
+    available_position: available_positions.first,
+    recruiter: Recruiter.first
+})
 
-Meeting.create!({title:'Technical interview', description: 'after two weeks blablabla', starts_on:Date.tomorrow.at_midday, ends_on:Date.tomorrow.at_midnight, participant_id:participant.id, recruiter_id: participant.recruiter.id})
+Meeting.create!({title:'Technical interview', description: 'After two weeks of blablabla', starts_on:Date.tomorrow.at_midday, ends_on:Date.tomorrow.at_midnight, participant_id:participant.id, recruiter_id: participant.recruiter.id})
 
 p "Created #{Skill.count} skill(s) & #{AvailablePosition.count} position(s) & #{Participant.count} participant(s) & #{Recruiter.count} recruiter(s) & #{Meeting.count} meeting(s)"
