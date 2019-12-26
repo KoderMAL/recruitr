@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  starts_on: 2019-12-26 01:29:54
+  ends_on: 2019-12-26 01:29:54
+  participant: one
+  recruiter: one
+
+two:
+  title: MyString
+  description: MyString
+  starts_on: 2019-12-26 01:29:54
+  ends_on: 2019-12-26 01:29:54
+  participant: two
+  recruiter: two

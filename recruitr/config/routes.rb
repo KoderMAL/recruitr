@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meetings
   resources :participants do
     resource :available_position, except: :show, path_names: { edit: "" }
   end

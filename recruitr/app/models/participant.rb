@@ -2,6 +2,7 @@ class Participant < ApplicationRecord
     before_save :assign_recruiter
     after_save :send_mail_to_meeting_tenants
     has_one :available_position, dependent: :nullify
+    has_one :meeting, dependent: :destroy
     belongs_to :recruiter, optional: true
     accepts_nested_attributes_for :available_position
 
