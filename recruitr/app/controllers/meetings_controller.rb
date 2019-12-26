@@ -14,7 +14,9 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    @meeting = Meeting.new
+    p 'PARAMETERS'
+    p params
+    @meeting = Meeting.new({participant_id:params['participant_id'],recruiter_id:params['recruiter_id']})
   end
 
   # GET /meetings/1/edit

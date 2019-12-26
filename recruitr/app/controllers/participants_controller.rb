@@ -16,6 +16,7 @@ class ParticipantsController < ApplicationController
   def new
     @participant = Participant.new
     @participant.build_available_position
+    @participant.build_meeting
   end
 
   # GET /participants/1/edit
@@ -29,8 +30,10 @@ class ParticipantsController < ApplicationController
 
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
-        format.json { render :show, status: :created, location: @participant }
+        format.html { redirect_to new_meeting_path({participant_id:@participant.id, recruiter_id:@participant.recruiter.id}), notice: 'Participant was successfully created.' }
+        format.json { render json: @participant.meeting, status: :created, location: @participant.meeting }
+        # format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
+        # format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
