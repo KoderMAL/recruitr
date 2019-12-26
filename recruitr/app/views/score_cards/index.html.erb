@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Score Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Is average</th>
+      <th>Dynamism</th>
+      <th>Interest</th>
+      <th>Experience</th>
+      <th>Overall</th>
+      <th>Participant</th>
+      <th>Recruiter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @score_cards.each do |score_card| %>
+      <tr>
+        <td><%= score_card.is_average %></td>
+        <td><%= score_card.dynamism %></td>
+        <td><%= score_card.interest %></td>
+        <td><%= score_card.experience %></td>
+        <td><%= score_card.overall %></td>
+        <td><%= score_card.participant_id %></td>
+        <td><%= score_card.recruiter_id %></td>
+        <td><%= link_to 'Show', score_card %></td>
+        <td><%= link_to 'Edit', edit_score_card_path(score_card) %></td>
+        <td><%= link_to 'Destroy', score_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Score Card', new_score_card_path %>

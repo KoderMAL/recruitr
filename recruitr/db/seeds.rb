@@ -16,9 +16,11 @@ Meeting.destroy_all
 skills = Skill.create!([{
     content:'ruby'
     },{
+    content:'marketing'
+    },{
     content:'management'
     },{
-    content:'marketing'
+    content:'sales'
     }])
 
 available_positions = AvailablePosition.create!([{
@@ -58,6 +60,20 @@ participant = Participant.create!({
     recruiter: Recruiter.first
 })
 
-Meeting.create!({title:'Technical interview', description: 'After two weeks of blablabla', starts_on:Date.tomorrow.at_midday, ends_on:Date.tomorrow.at_midnight, participant_id:participant.id, recruiter_id: participant.recruiter.id})
+Meeting.create!({
+    title:'Technical interview', 
+    description: 'After two weeks of blablabla', 
+    starts_on:Date.tomorrow.at_midday, 
+    ends_on:Date.tomorrow.at_midnight, 
+    participant_id:participant.id, 
+    recruiter_id: participant.recruiter.id})
 
-p "Created #{Skill.count} skill(s) & #{AvailablePosition.count} position(s) & #{Participant.count} participant(s) & #{Recruiter.count} recruiter(s) & #{Meeting.count} meeting(s)"
+ScoreCard.create!({
+    dynamism:5,
+    interest:4, 
+    experience:3, 
+    overall:5, 
+    participant_id: participant.id, 
+    recruiter_id: participant.recruiter.id})
+
+p "Created #{Skill.count} skill(s) & #{AvailablePosition.count} position(s) & #{Participant.count} participant(s) & #{Recruiter.count} recruiter(s) & #{Meeting.count} meeting(s) & #{ScoreCard.count} score card(s)"

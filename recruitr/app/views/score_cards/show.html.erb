@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is average:</strong>
+  <%= @score_card.is_average %>
+</p>
+
+<p>
+  <strong>Dynamism:</strong>
+  <%= @score_card.dynamism %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @score_card.interest %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @score_card.experience %>
+</p>
+
+<p>
+  <strong>Overall:</strong>
+  <%= @score_card.overall %>
+</p>
+
+<p>
+  <strong>Participant:</strong>
+  <%= @score_card.participant_id %>
+</p>
+
+<p>
+  <strong>Recruiter:</strong>
+  <%= @score_card.recruiter_id %>
+</p>
+
+<%= link_to 'Edit', edit_score_card_path(@score_card) %> |
+<%= link_to 'Back', score_cards_path %>

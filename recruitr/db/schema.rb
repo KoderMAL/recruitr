@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_26_002954) do
+ActiveRecord::Schema.define(version: 2019_12_26_140701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,20 @@ ActiveRecord::Schema.define(version: 2019_12_26_002954) do
     t.index ["participant_id"], name: "index_recruiters_on_participant_id"
   end
 
+  create_table "score_cards", force: :cascade do |t|
+    t.boolean "is_average"
+    t.integer "dynamism"
+    t.integer "interest"
+    t.integer "experience"
+    t.integer "overall"
+    t.bigint "participant_id", null: false
+    t.bigint "recruiter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["participant_id"], name: "index_score_cards_on_participant_id"
+    t.index ["recruiter_id"], name: "index_score_cards_on_recruiter_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "content"
     t.bigint "available_position_id"
@@ -73,5 +87,7 @@ ActiveRecord::Schema.define(version: 2019_12_26_002954) do
   add_foreign_key "meetings", "recruiters"
   add_foreign_key "participants", "recruiters"
   add_foreign_key "recruiters", "participants"
+  add_foreign_key "score_cards", "participants"
+  add_foreign_key "score_cards", "recruiters"
   add_foreign_key "skills", "available_positions"
 end

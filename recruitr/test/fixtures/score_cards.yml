@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_average: false
+  dynamism: 1
+  interest: 1
+  experience: 1
+  overall: 1
+  participant: one
+  recruiter: one
+
+two:
+  is_average: false
+  dynamism: 1
+  interest: 1
+  experience: 1
+  overall: 1
+  participant: two
+  recruiter: two
