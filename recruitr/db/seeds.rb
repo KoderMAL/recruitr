@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Clearing all models
+ScoreCard.destroy_all
 Recruiter.destroy_all
 Participant.destroy_all
 AvailablePosition.destroy_all
