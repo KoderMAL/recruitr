@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :meetings
   resources :participants do
     resource :available_position, except: :show, path_names: { edit: "" }
+    resource :meeting
   end
   get 'welcome/index'
   resources :available_positions do

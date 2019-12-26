@@ -11,6 +11,7 @@ Recruiter.destroy_all
 Participant.destroy_all
 AvailablePosition.destroy_all
 Skill.destroy_all
+Meeting.destroy_all
 
 skills = Skill.create!([{
     content:'ruby'},{
@@ -43,12 +44,12 @@ Recruiter.create!([{
     seniority_score:35
 }])
 
-Participant.create!({
+participant = Participant.create!({
     first_name:'Amine',
     last_name:'Lalaoui',
     email:'amine@sykxlab.com',
     social_media:'github.com/KoderMAL', available_position: available_positions.first})
 
+Meeting.create!({title:'Technical interview', description: 'after two weeks blablabla', starts_on:Date.tomorrow.at_midday, ends_on:Date.tomorrow.at_midnight, participant_id:participant.id, recruiter_id: participant.recruiter.id})
 
-
-p "Created #{Skill.count} skill(s) & #{AvailablePosition.count} position(s) & #{Participant.count} participant(s) & #{Recruiter.count} recruiter(s)"
+p "Created #{Skill.count} skill(s) & #{AvailablePosition.count} position(s) & #{Participant.count} participant(s) & #{Recruiter.count} recruiter(s) & #{Meeting.count} meeting(s)"

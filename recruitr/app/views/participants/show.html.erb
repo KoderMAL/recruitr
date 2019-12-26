@@ -29,7 +29,12 @@
   <strong>Assigned to</strong>
   <%= @participant.recruiter.first_name %>
 </p>
+<p>
+  <strong>Meeting on:</strong>
+  <%= @participant.meeting.starts_on %>
+  <%= link_to 'Edit meeting', edit_meeting_path(@participant.meeting) %>
+</p>
 
-
+<%= link_to 'Create Meeting', new_meeting_path(@participant.meeting) %> |
 <%= link_to 'Edit', edit_participant_path(@participant) %> |
 <%= link_to 'Back', participants_path %>
