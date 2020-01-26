@@ -6,5 +6,5 @@ class Meeting < ApplicationRecord
 
   def send_mail_to_meeting_tenants
     p self
-end
+  end
 end

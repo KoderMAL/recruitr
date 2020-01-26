@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 2019_12_26_140701) do
     t.string "social_media"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "recruiter_id"
-    t.index ["recruiter_id"], name: "index_participants_on_recruiter_id"
   end
 
   create_table "recruiters", force: :cascade do |t|
@@ -61,7 +59,6 @@ ActiveRecord::Schema.define(version: 2019_12_26_140701) do
   end
 
   create_table "score_cards", force: :cascade do |t|
-    t.boolean "is_average"
     t.integer "dynamism"
     t.integer "interest"
     t.integer "experience"
@@ -85,7 +82,6 @@ ActiveRecord::Schema.define(version: 2019_12_26_140701) do
   add_foreign_key "available_positions", "participants"
   add_foreign_key "meetings", "participants"
   add_foreign_key "meetings", "recruiters"
-  add_foreign_key "participants", "recruiters"
   add_foreign_key "recruiters", "participants"
   add_foreign_key "score_cards", "participants"
   add_foreign_key "score_cards", "recruiters"

@@ -3,7 +3,7 @@ class Participant < ApplicationRecord
     has_one :available_position, dependent: :nullify
     has_one :meeting, dependent: :destroy
     has_many :score_cards, dependent: :destroy
-    belongs_to :recruiter, optional: true
+    has_one :recruiter
     accepts_nested_attributes_for :available_position
 
     def assign_recruiter
